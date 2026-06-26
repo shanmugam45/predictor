@@ -1,19 +1,22 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api/v1',
-  headers: { 'Content-Type': 'application/json' },
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
   timeout: 15000,
 })
 
 api.interceptors.response.use(
-  (res) => res,
-  (err) => {
+  (response) => response,
+  (error) => {
     const message =
-      err.response?.data?.detail ||
-      err.response?.data?.message ||
-      err.message ||
+      error.response?.data?.detail ||
+      error.response?.data?.message ||
+      error.message ||
       'An unexpected error occurred'
+
     return Promise.reject(new Error(message))
   }
 )
