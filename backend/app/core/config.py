@@ -1,6 +1,6 @@
 from typing import List
 
-from pydantic_settings import BaseSettingst
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
