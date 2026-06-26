@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./student_marks.db"
-    MODEL_PATH: str = "./models/trained_model.joblib"
+    MODEL_PATH: str = "./marks_model.pkl"
     CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
     ALLOWED_HOSTS: List[str] = ["localhost", "127.0.0.1", "*"]
     SECRET_KEY: str = "changeme_use_a_real_secret_key_in_production"
