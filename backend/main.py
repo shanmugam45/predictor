@@ -60,7 +60,7 @@ app.add_middleware(
 )
 
 # ── Routers ────────────────────────────────────────────────────────────────────
-app.include_router(predictions.router, prefix="/api/v1/predictions", tags=["Predictions"])
+app.include_router(predictions.router, prefix="/api/v1/predictions/", tags=["Predictions"])
 app.include_router(model.router,    prefix="/api/v1/model",   tags=["Model"])
 
 

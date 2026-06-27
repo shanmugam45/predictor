@@ -5,7 +5,7 @@ const apiBaseUrl = import.meta.env.VITE_API_URL
   || 'https://predictor-ep5n.onrender.com'  // fallback for safety
 
 const api = axios.create({
-  baseURL: apiBaseUrl,
+  baseURL: `${apiBaseUrl}/api/v1`,
   headers: {
     'Content-Type': 'application/json',
   },
